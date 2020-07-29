@@ -23,7 +23,7 @@ MarkupSafe
 numpy
 protobuf
 pycparser
-pygpu
+# pygpu
 pyreadline==2.1
 PyYAML==5.3.1
 scipy
