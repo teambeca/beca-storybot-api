@@ -2,5 +2,4 @@ name: beca_api
 dependencies:
   - tensorflow
   - flask
-  - pip:
-      - gunicorn==20.0.4
+  - gunicorn
