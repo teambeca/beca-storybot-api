@@ -20,7 +20,7 @@ Keras-Preprocessing
 Mako
 Markdown
 MarkupSafe
-mkl-service
+mkl-service==2.3.0
 numpy
 protobuf
 pycparser
