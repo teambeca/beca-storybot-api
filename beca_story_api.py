@@ -1,4 +1,3 @@
-from gevent.pywsgi import WSGIServer
 from flask import Flask, request, abort, make_response, jsonify
 
 from predictor import predict
@@ -55,6 +54,4 @@ def matching():
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', debug=True)
-    # app_server = WSGIServer(('', 5000), app)
-    # app_server.serve_forever()
+    app.run(threaded=True, port=5000)
