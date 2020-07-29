@@ -6,7 +6,7 @@ raw_text = raw_text.splitlines()
 
 for x in range(len(raw_text)):
     temp = raw_text[x].split("==")
-    raw_text[x] = temp[0] + "==" + temp[1]
+    raw_text[x] = temp[0] # + "==" + temp[1]
 
 with open("temp.txt", "w") as text_file:
     for t in raw_text:
