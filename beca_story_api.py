@@ -39,18 +39,14 @@ def _get_json():
 
 @app.route('/', methods=["POST"])
 def matching():
-    print(" TEMP TEMP ")
+    return jsonify("temp")
 
     if not _check_token():
         abort(make_response(jsonify(message="Authentication error"), 401))
 
-    print(" TEMP TEMP 2")
-
     json_data = _get_json()
     if json_data is None:
         abort(make_response(jsonify(message="The body is not valid"), 404))
-
-    print(" TEMP TEMP 3")
 
     message = {
         "message": predict(json_data["message"], json_data["size"])
