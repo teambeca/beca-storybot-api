@@ -26,7 +26,8 @@ model = load_model("model/model.h5")
 
 def predict(message, size):
     counter = 0
-    while size > counter:# or message[-1] != ".":
+    # while size > counter or message[-1] != ".":
+    while size > counter:
         _matrix = np.zeros((1, len(message), len(chars)))
         for _x, _c in enumerate(message):
             _matrix[0, _x, char_indexes[_c]] = 1
