@@ -21,7 +21,7 @@ Mako
 Markdown
 MarkupSafe
 numpy
-protobuf==3.12.3
+protobuf
 pycparser
 pygpu==0.7.6
 pyreadline==2.1
