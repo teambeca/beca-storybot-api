@@ -53,5 +53,6 @@ def matching():
 
 
 if __name__ == '__main__':
-    app_server = WSGIServer(('', 5000), app)
-    app_server.serve_forever()
+    app.run(host='0.0.0.0', debug=True)
+    # app_server = WSGIServer(('', 5000), app)
+    # app_server.serve_forever()
