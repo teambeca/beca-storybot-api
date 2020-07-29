@@ -1,6 +1,7 @@
-import json
 from gevent.pywsgi import WSGIServer
 from flask import Flask, request, abort, make_response, jsonify
+
+from predictor import predict
 
 # ----------------------------------------------------------------------------------------------------------------------
 app = Flask(__name__)
@@ -11,7 +12,7 @@ TOKEN = "$2y$12$aTLjWAe7XUIZC8jFNoytQuATo4MfZH9iM2LjDDhle7ZJlWIspBvYG"
 
 # ----------------------------------------------------------------------------------------------------------------------
 def _check_token():
-    token = request.headers.get("token")
+    token = request.headers.get("Authorization")
     if token is None:
         return False
 
@@ -32,12 +33,8 @@ def _get_json():
     elif not "message" in json_data:
         return None
     elif not "size" in json_data:
-        json_data["size"] = 500
+        json_data["size"] = 300
     return json_data
-
-
-def _predict(message, size=500):
-    print("")
 
 
 @app.route('/', methods=["POST"])
@@ -49,10 +46,12 @@ def matching():
     if json_data is None:
         abort(make_response(jsonify(message="The body is not valid"), 404))
 
-    # TODO: call _predict
-    # TODO: return
+    message = {
+        "message": predict(json_data["message"], json_data["size"])
+    }
+    return jsonify(message)
 
 
 if __name__ == '__main__':
-    app_server = WSGIServer(('', 5041), app)
+    app_server = WSGIServer(('', 5000), app)
     app_server.serve_forever()
