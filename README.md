@@ -38,4 +38,4 @@ Gerekli kütüphanelerin kurulumları bittikten sonra ```model``` klasörüne e�
 #### Anaconda veya Miniconda kullanmanız önerilir.
 
 ## Lisans
-[Apache License 2.0](LICENSE)
+[MIT License](LICENSE)
