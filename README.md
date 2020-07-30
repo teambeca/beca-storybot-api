@@ -10,5 +10,32 @@ BECA takımı ve Baazi uygulaması hakkında daha bilgi almak için, [tıklayın
 
 ## Başlangıç
 
+BECA StoryBot API, Python dilinde yazılmıştır.
+
+## Gereksinimler
+
+StoryBot API'ı çalıştırabilmek için, sisteminize Python'un (```version : 3.8```) kurulu olması gerkemektedir.
+
+Gerekli kütüphaneleri kurmak için aşşağıda yazılı komutları verebilirsiniz.
+
+```
+pip install numpy
+pip install Keras
+pip install Flask
+pip install pickle4
+pip install tensorflow
+
+```
+
+Eğer Anaconda veya Miniconda kullanıyorsanız:
+
+```
+conda env create --file environment.yml
+```
+
+Gerekli kütüphanelerin kurulumları bittikten sonra ```model``` klasörüne eğitmiş olduğunuz BECA StoryBot modelinizi yerşeltirin.
+
+#### Anaconda veya Miniconda kullanmanız önerilir.
+
 ## Lisans
 [Apache License 2.0](LICENSE)
