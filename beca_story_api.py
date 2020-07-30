@@ -1,6 +1,6 @@
-from flask import Flask, request, abort, make_response, jsonify
-
 from predictor import predict
+from gevent.pywsgi import WSGIServer
+from flask import Flask, request, abort, make_response, jsonify
 
 # ----------------------------------------------------------------------------------------------------------------------
 app = Flask(__name__)
@@ -54,4 +54,5 @@ def matching():
 
 
 if __name__ == '__main__':
-    app.run(threaded=True, port=5000)
+    app_server = WSGIServer(('', 5000), app)
+    app_server.serve_forever()
