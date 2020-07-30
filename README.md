@@ -16,7 +16,7 @@ BECA StoryBot API, Python dilinde yazılmıştır.
 
 StoryBot API'ı çalıştırabilmek için, sisteminize Python'un (```version : 3.8```) kurulu olması gerkemektedir.
 
-Gerekli kütüphaneleri kurmak için aşşağıda yazılı komutları verebilirsiniz.
+Gerekli kütüphaneleri kurmak için aşağıda yazılı komutları verebilirsiniz.
 
 ```
 pip install numpy
